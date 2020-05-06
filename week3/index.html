@@ -27,11 +27,11 @@
     />
   </head>
   <body>
-        <div class="container">
-            <h1>Welcome to Christian Longhurst's Week 3</h1>
-            <div class="col-lg-8 pull-left">
-                <h2 class="text-warning text-center text-capitalize">Notes</h2>
-                <pre>
+    <div class="container">
+      <h1>Welcome to Christian Longhurst's Week 3</h1>
+      <div class="col-lg-8 pull-left">
+        <h2 class="text-warning text-center text-capitalize">Notes</h2>
+        <pre>
                     When OOP is being done having object classes 2 ways to do it:
                         1st way:
                             user = {
@@ -79,32 +79,36 @@
                     As well you can change what is being said on the page itself.
                     Based on what is done in the Javascript you can completely add new html elements to 
                     allow for new items to happen on screen after the user does something.
-                </pre>
-            </div>
-            <div class="text-warning text-capitalize text-center">
+                </pre
+        >
+      </div>
+      <div class="text-warning text-capitalize text-center">
+        <a href="minecraft.html">Minecraft Mobs</a>
+      </div>
+      <div class="text-warning text-capitalize text-center">
+        <button onclick="calculator();">Calculator</button>
+      </div>
+    </div>
 
-            </div>
+    <script>
+      function calculator() {
+        let calculator = {
+          read() {
+            this.num1 = +prompt("num1?", 0);
+            this.num2 = +prompt("num2?", 0);
+          },
 
-        </div>
-
-        <script>
-            let calculator = {
-
-                read(){
-                    this.num1 = +prompt('num1?', 0);
-                    this.num2 = +prompt('num2?', 0);
-                },
-
-                sum(){
-                    return "The sum of number 1 and 2 " + this.num1 + this.num2;
-                },
-                mul(){
-                    return "The product of number 1 and 2 " + this.num1 * this.num2;
-                }
-            };
-            calculator.read();
-            alert(calculator.sum() );
-            alert( calculator.mul() );
-        </script>
+          sum() {
+            return "The sum of number 1 and 2 " + this.num1 + this.num2;
+          },
+          mul() {
+            return "The product of number 1 and 2 " + this.num1 * this.num2;
+          },
+        };
+        calculator.read();
+        alert(calculator.sum());
+        alert(calculator.mul());
+      }
+    </script>
   </body>
 </html>
