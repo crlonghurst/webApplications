@@ -41,6 +41,7 @@
         'Benenson, Peter',
         'Ben-Gurion, David',
         'Benjamin, Walter',
+        'Longhurst, Christian',
         'Benn, Tony',
         'Bennington, Chester',
         'Benson, Leana',
@@ -73,27 +74,50 @@
 
       // Array.prototype.filter()
       // 1. Filter the list of inventors for those who were born in the 1500's
-
+      const youngInvestors = inventors.filter(inventors => 
+      (  inventors.year >= 1500 && inventors.year < 1600
+      ));
+      console.log(youngInvestors);
       // Array.prototype.map()
       // 2. Give us an array of the inventors' first and last names
-
+      const full_name = inventors.map(inventors =>(inventors.first + ' ' + inventors.last));
+      console.log(full_name);
       // Array.prototype.sort()
       // 3. Sort the inventors by birthdate, oldest to youngest
-
+      const sortingInventors = inventors.sort(function(a, b){
+        return a.year - b.year;
+      });
+      console.log(sortingInventors);
       // Array.prototype.reduce()
       // 4. How many years did all the inventors live?
-
+      //const count;
+      const totalYears = inventors.reduce((count, inventors) =>{
+        return count + (inventors.passed - inventors.year)
+      }, 0);
+      console.log(totalYears);
       // 5. Sort the inventors by years lived
-
+      const inventorSorting = inventors.sort(function(a, b) {
+        const yearsLived = a.passed - a.year;
+        const yearsLiveb = b.passed - b.year;
+        return yearsLiveb - yearsLived;
+      });
+      console.log(inventorSorting);
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
       // goto the link above and open the console. Paste the following two lines in.  That will create a list of links in memory that you can reference through the console. Use that list to finish the problem.
       // const category = document.querySelector('.mw-category');
       // const links = Array.from(category.querySelectorAll('a'));
-
+      /*const pattern = /de/
+      const blvd = links.filter(links =>
+      (pattern.test(links.text) ))*/
       // 7. sort Exercise
       // Sort the people alphabetically by last name
-
+      const sortPeople = people.sort((lastOne, nextOne)=>{
+        const [alast, afirst] = lastOne.split(', ');
+        const [blast, bfirst] = nextOne.split(', ');
+        return alast > blast ? 1 : -1;
+      });
+      console.log(sortPeople);
       // 8. Reduce Exercise
       // Sum up the instances of each of these
       const data = [
@@ -112,6 +136,14 @@
         'car',
         'truck'
       ];
+      const summedup = data.reduce(function(data, item){
+        if(!data[item]){
+          data[item] = 0;
+        }
+        data[item]++;
+        return data;
+      }, {});
+      console.log(summedup);
     </script>
   </body>
 </html>
