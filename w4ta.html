@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Activity 4</title>
+</head>
+<style>
+    .grid {
+        display: grid;
+        width: 150px; height: 150px;
+        background-color: white;
+        border-bottom: black;
+        border-right: black;
+        margin: 100px 200px;
+        position: relative;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        
+}
+
+.grid::before {
+    background-color: white;
+    border-top: 10px solid black;
+    border-bottom: 50px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    position: absolute; left: -52px; top: -50px;
+}
+
+.grid::after {
+    width: 150px; height: 150px;
+    background-color: white;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    position: absolute; right: -52px; top: -52px;
+}
+
+.grid2 {
+        display: grid;
+        width: 150px; height: 150px;
+        background-color: white;
+        border-bottom: black;
+        border-right: black;
+        margin: 100px 200px;
+        position: relative;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        
+}
+
+.grid2::before {
+    background-color: white;
+    border-top: 10px solid black;
+    border-bottom: 50px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    position: absolute; left: -52px; top: -50px;
+}
+
+.grid2::after {
+    width: 150px; height: 150px;
+    background-color: white;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    position: absolute; right: -52px; top: -52px;
+}
+
+.grid2 > div:nth-child(3n-1) {
+    border-right: 2px solid black;
+}
+.grid2 > div:nth-child(3n-2) {
+    border-right: 2px solid black;
+}
+.grid2 > div:nth-child(n + 0){
+    border-bottom: 2px solid black;
+}
+.grid2 > div:nth-child(n+7){
+    border-bottom: 0;
+}
+</style>
+
+<body>
+    <div class="grid2" id="board">
+        <div class="cell" id="one" onclick="check(this);">&nbsp;</div>
+        <div class="cell" id="two" onclick="check(this);">&nbsp;</div>
+        <div class="cell" id="three" onclick="check(this);">&nbsp;</div>
+        <div class="cell" id="four" onclick="check(this);">&nbsp;</div>
+        <div class="cell" id="five" onclick="check(this);">&nbsp;</div>
+        <div class="cell" id="six" onclick="check(this);">&nbsp;</div>
+        <div class="cell" id="seven" onclick="check(this);">&nbsp;</div>
+        <div class="cell" id="eight" onclick="check(this);">&nbsp;</div>
+        <div class="cell" id="nine" onclick="check(this);">&nbsp;</div>
+    </div>
+
+    <button id="reset" onclick="clearBoard()">Reset</button>
+    <script>
+        let turn = 0;
+
+        function check(element){
+            if(element.innerHTML == "X" || element.innerHTML == "O"){
+                return;
+            }
+            else{
+            if(turn == 0){
+                element.innerText = "X";
+                turn = 1;
+            }
+            else{
+                element.innerText = "O";
+                turn = 0;
+            }
+        }
+    }
+
+    function clearBoard(){
+        const board = document.querySelector('#board');
+        for (let i = 0; i < board.children.length; i++) {
+          board.children[i].innerText = '';
+        }
+        const children = Array.from(board.children);
+        const empty = children.filter(function(child) {
+          return child.innerText == 'X' || child.innerText == 'O';
+        });
+        console.log(empty);
+    }
+    </script>
+</body>
+</html>

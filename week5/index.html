@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christian Longhurst Week 5</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Christian Longhurst's Week 5</h1>
+      <div class="col-lg-8 pull-left">
+        <h2 class="text-warning text-center text-capitalize">Notes</h2>
+        <pre>
+            An exception is an error that can produce a value that allows the program
+            to deal with the error.
+
+            Exceptions also leave a stack trace to allow for method calls to point
+            to where the error occured.
+
+            If an error is produced but isn't enough to crash the program it is called
+            a warning.
+
+            JavaScript is fairly forgiving when dealing with errors. 
+
+            Even if a program doesn't have a error to crash or even give unauthorized 
+            access. There is the detail of giving bad data. As well as crashes there is
+            Runtime and logic errors that the program still runs but doesn't tell the user
+            and just has bad data.
+            
+            To overcome logic and runtime errors testing and debugging is extremely important
+            According to SitePoint, "In production, a ninja programmer should try to make
+            the code fail gracefully (although not completely silently)"
+
+            ECMAScript 5 introduced a new mode called strict mode allowing for better
+            error handling, by giving more errors, and voids some old features. 
+
+            Not using this strict mode is also known as 'sloppy mode' probably 
+            it means that you could have more bugs and logic and runtime errors
+            that are not handled correctly.
+
+            To use strict mode apply: 
+                'use strict'; 
+            on the first line of code.
+
+            Test-driven Development
+
+            This is the type of development where you create the debugging tests 
+            before actually writing code, this allows for making sure the code will
+            function appropriately easier.
+            A possible workflow for Test-driven Development (TDD):
+                1. Write tests (that initially fail)
+                2. write code to pass the tests
+                3. refactor the code
+                4. Test refactored code
+                5. write more tests for new features.
+            This cycle is referred to as "red-green-refactor" cycle of TDD.
+
+            TDD is best practice ddevelopment.
+
+            There are testing frameworks which are:
+
+                Jest created by Facebook, installed by NPM, by following command:
+                    npm install -g jest
+                
+        </pre>
+      </div>
+      <div class="text-warning text-capitalize text-center">
+        
+      </div>
+    </div>
+    <script>
+        function squareRoot(number){
+            'use strict';
+            if (number < 0){
+                throw new RangeError("You can't find the square root of negative number");
+            }
+            return Math.sqrt(number);
+        };
+        test('square root of 4 is 2', ()=>{
+            expect(squareroot(4)).toBe(2);
+        });
+    </script>
+  </body>
+</html>
