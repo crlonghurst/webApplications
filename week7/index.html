@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christian Longhurst Week 7</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Christian Longhurst's Week 7</h1>
+      <div class="col-lg-8 pull-left">
+        <h2 class="text-warning text-center text-capitalize">Notes</h2>
+        <pre>
+          You can have 
+            functionName.call(params) 
+            to have that function invoked. To use a function call like this 
+            you will need to have the first parameter being NULL or use 'this'
+            to allow for data manipulation.
+
+            You can add a description property to functions to allow for better
+            understanding of what the function does.
+            
+            If a certain function takes a while to compute you can 
+            cache or Memoization to allow for the value to be stored
+            and used again at another time. This is only useful when
+            you call the same function with the same argument expecting
+            the same result.
+
+            The cache object will get stored so that it looks like an array
+            when being accessed.
+
+            Immediately Invoked Function Expressions or IIFE pronounced iffy.
+            This function type is immediately executed when defined.
+            To make a function an iffy you simply do as the follows:
+                    (function sayHi(){console.log("Hello");})();
+            
+            There is no way to remove a variable from a scope once it has been declared. 
+            Be careful to only declare only the variables that are absolutely necessary.
+
+            IIFE can be used to initialize code, meaning this code will only be run once
+            like to initialize different objects a good example is:
+                (function() {
+                    const name = 'Peter Parker';
+                    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                    'Friday', 'Saturday'];
+                    const date = new Date(), today = days[date.getDay()];
+                    console.log('Welcome back ${name}. Today is ${today}');
+                })();
+                Console output
+                << 'Welcome back Peter Parker. Today is Tuesday'
+
+            It is recommended to only use Strict mode inside of a IIFE function.
+            Such as:
+                (function(){
+                    'use strict';
+                })();
+            This ensures only the IIFE function will use strict mode.
+
+            An IIFE can also be used to create Self-contained Code Blocks. Such as
+                (function () {
+                    //block A
+                    const name = 'Block A';
+                    console.log(`Hello from ${name}`);
+                }());
+                (function(){
+                    // block B 
+                    const name = 'Block B';
+                    console.log(`Hello from ${name}`);
+                }());
+            This will allow for two different code blocks to separated
+            and also executed immediately after initialization.
+
+
+            Because Javascript is dynamic you can call a function itself 
+            but also define itself and also redefine itself. 
+            Such as:
+                function party(){
+                    console.log('Wow this is amazing!');
+                    party = function(){
+                        consol.log('Been there, got the T-Shirt');
+                    }
+                }
+            Javascript can be used to have asynchronous timing.
+                function wait(message, callback, seconds){
+                    setTimeout(callback, seconds * 1000);
+                    console.log(message);
+                }
+            
+            Callback hell is the term used to refer to a tangled mess of code
+            that can't be comprehend.
+
+            Promises are when asynchronous operations are done at once.
+
+            Javascript also can make Generator functions that create iterators that maintain the state
+            of a value.
+
+            AJAX is a way to pass information between a server and the client side. 
+            simple AJAX is:
+                const url = 'https:example.com/data';
+
+                fetch(url)
+                .then((response)=>{
+                    if(response.ok){
+                        return response;
+                    }
+                    throw Error(response.statusText);
+                })
+                .then( response => //do something with reponse )
+                .catch( error => console.log('There was an error!'))
+
+                AJAX can use JSON or other Response Objects
+                
+
+        </pre>
+
+      </div>
+      <div class="text-warning text-capitalize text-center">
+        
+      </div>
+    </div>
+  </body>
+</html>
