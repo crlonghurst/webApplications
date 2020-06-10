@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christian Longhurst Week 7</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Christian Longhurst's Week 7</h1>
+      <div class="col-lg-8 pull-left">
+        <h2 class="text-warning text-center text-capitalize">Notes</h2>
+        <pre>
+          There are transforming functions in CSS3, it is called by using transform and using another name separated by a space.
+          Such as:
+            transform: translate(45px, -45px);
+          Translation allows for moving elements left, right, up or down. Similar to the behavior of position: relative; when declaring top or left.
+          Unlike position: relative translate only moves based on its current position.
+
+          Scale scales items by defined parameters horizontally then vertically.
+           transform: scale(1.5, 0.25);
+           Can use scaleX(x) or scaleY(x) these will only scale the present direction of the function.
+
+          Rotate will rotate the element on a radius.
+
+          You can set the origion of the transform by:
+            transform-origin: 0 0;
+          
+            To support older Browsers you need to include -webkit- and put it on every transform as a prefix. 
+            Like:
+                -webkit-transition-property: -webkit-transform;
+                transition-property: transform;
+            There is a Transition-duration that sets how long the transition will last and how long it will take to get to the transition.
+
+            transition properties allow for multiple transitions in one call.
+            Such as:
+                transition-property: transform, color;
+                transition-duration: 0.2s;
+                transition-timing-function: ease-out;
+                transition-delay: 50ms;
+            
+            There is a keyframes that allow for animations have to use @-webkit-keyframes myAnimation{
+                code
+            }
+            Animation properties:
+                animation-name:
+                animation-duration:
+                animation-timing-function
+                animation-iteration-count:
+                animation-direction:
+                animation-direction:
+                animation-delay:
+                animation-fill-mode:
+            
+            Warning with naming the animation and using multiple animations in one call such as:
+                animation:
+                    animationOne 300ms ease-in backwards,
+                    animationTwo 600ms ease-out 1s forwards;
+            
+            There is a Canvas api that allows us to draw anything in JavaScript;
+            First use
+            <canvas>Sorry! Your browser doesn't support canvas</canvas>
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            context.strokeStyle = "Red";
+
+            This allows for better drawing in JavaScript.
+        </pre>
+
+      </div>
+      <div class="text-warning text-capitalize text-center">
+        
+      </div>
+    </div>
+  </body>
+</html>
