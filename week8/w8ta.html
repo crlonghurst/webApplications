@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <title>Star Wars Ships</title>
+</head>
+<body>
+    <h1>Star Wars Ships</h1>
+    
+    <div id="starWars">
+        <h2>List of Ships</h2>
+        <ul id="shipsList">
+
+        </ul>
+        <button id="getShip" onclick="getShips('https://swapi.dev/api/starships/')">Get Starships</button>
+    </div>
+<script>
+    const btn = document.querySelector('#getShip');
+    async function getShips(url){
+        try{
+            const response = await fetch(url);
+            if (!response.ok){
+                throw Error(response.statustext);
+            } else{
+                const fetchJson = response.json();
+                console.log(fetchJson);
+                renderShips(fetchJson);
+            }
+        } catch (error){
+            console.log(error);
+        }
+    }
+
+    function renderShips(data) {
+        const shipsContainer = document.querySelector('#shipsList');
+        
+        if(data.next){
+            btn.textContent = "Show More"; 
+            btn.setAttribute('onclock', `getShips('${data.next}')`);
+        }
+        data.results.forEach(starship => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = 
+            `
+                <span class="ship-name">Star Ship Name:${starship.name}
+                <br>Star Ship Manufacturer: ${starship.manufacturer}<br>
+                Star Ship Model: ${starship.model}<br>
+                Hyperdrive Ratin: ${starship.hyperdrive_rating}<br>
+                Cargo Capacity: ${starship.cargo_capacity}<br>
+                Credits Cost: ${starship.cost_in_credits}<br>
+                Crew: ${starship.crew}<br>
+                Max Atmosphere Speed: ${starship.max_atmosphering_speed}</span>
+                <button class="view-btn" onclick="getDetails'${starship.name}', '${starship.url}">View</button>
+            `
+            listItem.id = starship.name;
+            shipsContainer.appendChild(listItem);
+
+        })
+    }
+
+    function getDetails(id, url) {
+        fetch (url)
+            .then( res => res.json() )
+            .then( json => {
+                console.log('Details ', json)
+                var li = document.getElementById(id);
+                var div = document.createElement('div');
+                div.innerHTML = 
+                `
+                    <img src="${json.sprites.front_default}" />
+                `
+                li.lastElementChild.remove();
+                li.appendChild(div);
+            })
+    }
+
+</script>
+</body>
+</html>

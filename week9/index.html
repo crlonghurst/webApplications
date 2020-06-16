@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christian Longhurst Week 7</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Christian Longhurst's Week 7</h1>
+      <div class="col-lg-8 pull-left">
+        <h2 class="text-warning text-center text-capitalize">Notes</h2>
+        <pre>
+            Browser Object Model or BOM is a collection of properties and has info about the browser and computer screens.
+            There is no official standard of the BOM.
+
+            There are dialog boxes like Alert and confirm and prompt, but there is also those for window. Like window.alert().
+
+            In the Window object there is a navigator property to have information about which browser the user is currently using. This is kind of misleading since users can masquerade as other browsers.
+
+            There are many different properties that give information about different aspects of browsers going from the history to locations of the window.
+
+            window.open will allow you to set a url and size of a window of a browser to show a second page when needed.
+            You can also have popup.close() function to close previous opened small windows.
+
+            Can set cookies by document.cookie = 'name=Superman';
+            To delete a cookie you go 
+                document.cookie = 'name=Batman; expires=Thu, 01 Jan 1970 00:00:01 GMT';
+            You can have popups have a timeout by going window.setTimeout(()=> alert("Time's Up!"), 3000);
+
+            the Data Attribute is a way of putting data into custom attributes that the browser ignore. They are also private to a page.
+
+            Geolocation will get the geographical position of the device. This is able to give user location pretty exactly.
+            Can use 
+                navigator.geolocation.getCurrentPosition(youAreHere);
+
+            Websockets is a new protocol that allows two way communication with a server.
+
+            YOu can add audio files through audio tags and you can add video by video tags.
+            Videos you can put volume and pause functions and attributes to edit the video on a page.
+        </pre>
+
+      </div>
+      <div class="text-warning text-capitalize text-center">
+        
+      </div>
+    </div>
+  </body>
+</html>
