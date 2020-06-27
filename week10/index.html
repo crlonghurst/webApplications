@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christian Longhurst Week 7</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Christian Longhurst's Week 10</h1>
+      <div class="col-lg-8 pull-left">
+        <h2 class="text-warning text-center text-capitalize">Notes</h2>
+        <pre>
+            Form Validation can be done in two places, Client Side and Server Side.
+                It is best to do both.
+            Why validate if we want users to have a simple time?
+                1. To get the right data in the right format,
+                2. To protect the user's data.
+                3. To protect us.
+
+            You can have several types of client-side 
+                1. Built-in form Validation
+                    By using the required attribute. Minlength and Maxlength. Min and max attributes, Type, Pattern.
+                2. Javascript
+                    by using the Constraint Validation API.
+                    Applying this API will allow you to set the validation message which shows upwhen it's not validated a custom message appears.
+            Fetch can have two parameters, usually just one,
+              example with two parameters,
+                const response = await fetch(url, {
+                  method: 'POST',
+                  mode: 'cors',
+                  cache: 'no-cache',
+                  credentials: 'same-origin',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  redirect: 'follow',
+                  referrerPolicy: 'no-referrer',
+                  body: JSON.stringify(data)
+                });
+                return response.json();
+
+                Mode: "no-cors" allows a limited set of headers
+                    Accept, Accept-language, Content-language, Content-Type,
+            Files can be uploaded using HTML input type="file" FormData() and fetch
+        </pre>
+
+      </div>
+      <div class="text-warning text-capitalize text-center">
+        
+      </div>
+    </div>
+  </body>
+</html>
