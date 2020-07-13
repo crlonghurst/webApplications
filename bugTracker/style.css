@@ -1,0 +1,43 @@
+/*
+Color 1: 241623
+Color 2: D0CD94
+Color 3: 3C787E
+Color 4: C7EF00
+Color 5: D56F3E
+
+*/
+body{
+    padding: 0;
+    background-color: #D0CD94;
+}
+
+.theList{
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: #3C787E;
+    text-align: center;
+}
+
+label{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.inputs{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+form{
+    margin-top: 1em;
+    background-color: #241623;
+    color: #D0CD94;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.heading{
+    background-color: #D56F3E;
+    text-align: center;
+    padding: 1.5em;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bug Tracker App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="data.js" type="module"></script>
+    <script src="bugTracker.js" type="module"></script>
+  </head>
+  <body>
+    <main>
+      <h1 class="heading">Bug Tracker Application</h1>
+      <div class="background">
+        <p>
+          Below are a list of bugs in different applications. Please attend to
+          them and when they are fixed please check the box below.
+        </p>
+        <div class="theList" id="theList"></div>
+        <form>
+            <label for="app">Application: </label>
+            <input type="text" name="app" class="inputs" id="app" required><br>
+            <label for="name">Found By: </label>
+            <input type="text" name="name" class="inputs" id="name" required><br>
+            <label for="snippet">Short Description: </label>
+            <input type="text" name="snippet" id="snippet" class="inputs" required><br>
+            <label for="desc">Long Description: </label><br>
+            <textarea name="desc" id="desc" cols="30" rows="10" class="inputs" required></textarea><br>
+            <input type="submit" value="Report Bug">
+
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
