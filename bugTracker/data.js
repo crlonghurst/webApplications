@@ -1,22 +1,37 @@
-const bugs = [{
-    application: "Bug Tracker",
-    foundBy: "Christian",
-    dateFound: "2 July 2020",
-    snippet: "It's a thing",
-    description: "When entering a bug it doesn't go where it should",
-    fixed: false
-}];
+import bugTracker from './bugTracker.js';
 
-window.addEventListener('load', displayBugs);
 
-function displayBugs(){
-    let listHTML = '';
-    bugs.forEach(bug => {
-        listHTML += "<h2>"+bug.application+"</h2>";
-        listHTML += "<p>Found By: "+bug.foundBy+"</p>";
-        listHTML += "<p>Snippet: "+bug.snippet+"</p>";
-        listHTML += "<p>Date: "+bug.dateFound+"</p>";  
-        listHTML += "Fixed: <input type='checkbox' name='fixed' id='fixed'>"
+window.addEventListener('load', bugTracker.displayBugs);
+document.querySelector('#btnadd').onclick = bugTracker.newBug;
+
+function saveBug(bug){
+    const bugList = getBugs();
+    bugList.push(bug);
+    localStorage.setItem('theList', JSON.stringify(bugList));
+}
+
+function getBugs(){
+    const bugs = localStorage.getItem('theList');
+    let bugList = [];
+    if(bugs){
+        bugList = JSON.parse(bugs);
+    }
+    return bugList;
+}
+
+
+function editBug(bug){
+    const bugList = getBugs();
+    bugList.forEach(element => {
+        if(bug.id == element.id){
+            element.fixed = bug.fixed;
+        }
     });
-    document.getElementById('theList').innerHTML = listHTML;
+    localStorage.setItem('theList', JSON.stringify(bugList));
+}
+
+export default{
+    saveBug,
+    getBugs,
+    editBug
 }

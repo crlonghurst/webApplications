@@ -3,32 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bug Tracker App</title>
+    <title>Bug Tracker</title>
     <link rel="stylesheet" href="style.css" />
     <script src="data.js" type="module"></script>
     <script src="bugTracker.js" type="module"></script>
   </head>
   <body>
-    <main>
-      <h1 class="heading">Bug Tracker Application</h1>
+    <main class="main">
+      <h1 class="heading" id="header">Bug Tracker</h1>
       <div class="background">
-        <p>
-          Below are a list of bugs in different applications. Please attend to
-          them and when they are fixed please check the box below.
-        </p>
-        <div class="theList" id="theList"></div>
-        <form>
-            <label for="app">Application: </label>
+        <div id="theList"></div>
+        <div id="error"></div>
+        <div id="filters">
+          <span class="filtering">Sort By Application:<br> <select id="appFilter"></select><br></span> 
+          <span class="filtering">Sort By Person: <br><select id="personFilter"></select></span>
+        </div>
+        <div class="form" id="form">
+            <label for="app" class="inputs">Application: </label>
             <input type="text" name="app" class="inputs" id="app" required><br>
-            <label for="name">Found By: </label>
+            <label for="name" class="inputs">Found By: </label>
             <input type="text" name="name" class="inputs" id="name" required><br>
-            <label for="snippet">Short Description: </label>
+            <label for="snippet" class="inputs">Short Description: </label>
             <input type="text" name="snippet" id="snippet" class="inputs" required><br>
-            <label for="desc">Long Description: </label><br>
+            <label for="desc" class="inputs">Long Description: </label><br>
             <textarea name="desc" id="desc" cols="30" rows="10" class="inputs" required></textarea><br>
-            <input type="submit" value="Report Bug">
-
-        </form>
+            <button id="btnadd">Report Bug</button>
+          </div>
       </div>
     </main>
   </body>

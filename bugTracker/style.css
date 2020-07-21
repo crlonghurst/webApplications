@@ -2,7 +2,7 @@
 Color 1: 241623
 Color 2: D0CD94
 Color 3: 3C787E
-Color 4: C7EF00
+Color 4: 582707
 Color 5: D56F3E
 
 */
@@ -10,33 +10,75 @@ body{
     padding: 0;
     background-color: #D0CD94;
 }
-
-.theList{
-    margin-left: 30%;
-    margin-right: 30%;
-    background-color: #3C787E;
+@media only screen and (min-width: 700px){
+.background{
+    grid-area: bg;
+    display: grid;
+    grid-template-areas:
+    'form list filters';
+    grid-gap: 1em;
+}
+.heading{
+    grid-area: header;
+}
+.main{
+    display: grid;
+    grid-template-areas: 
+    'header header'
+    'bg bg';
+}
+.form{
+    grid-area: form;
+}
+}
+#error{
+    grid-area: form;
+    color: red;
     text-align: center;
 }
 
-label{
-    margin-left: 30%;
-    margin-right: 30%;
+#theList{
+    /* margin-left: 30%;
+    margin-right: 30%; */
+    background-color: #3C787E;
+    text-align: center;
+    grid-area: list;
+}
+
+#filters{
+    background-color: #582707;
+    color: #F0C808;
+    padding-left: 5em;
+}
+
+.filtering{
+    margin-top: 1em;
+}
+
+.detailedView{
+    margin: 5em;
 }
 
 .inputs{
-    margin-left: 30%;
+    margin-left: 10%;
     margin-right: 30%;
 }
 
-form{
+.form{
+    
     margin-top: 1em;
     background-color: #241623;
     color: #D0CD94;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#btnadd{
+    margin-left: 40%;
 }
 
 .heading{
+    
     background-color: #D56F3E;
     text-align: center;
     padding: 1.5em;
